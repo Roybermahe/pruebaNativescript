@@ -19,9 +19,9 @@ export class ItemsComponent extends Observable {
     }
 
     loadInformation() {
-        this.itemService.watchItems((items: Item[]) => {
+        this.itemService.watchItems((Response: Item[]) => {
             this.items.splice(0, this.items.length);
-            this.items.push(items);  
+            this.items.push(Response);  
         })
     } 
 

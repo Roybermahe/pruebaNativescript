@@ -14,7 +14,7 @@ export class ItemService {
 
     watchItems(callback: Function) {
         this.docRef.onSnapshot((snap: firestore.DocumentSnapshot) => {
-            callback(snap.data().data);
+            callback(<Item[]>snap.data().data);
         }, error => callback(error));
     }
 }
